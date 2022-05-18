@@ -29,6 +29,13 @@ module Enumerable
   end
 
   def my_all?
+    index = 0
+    flag = true
+    until index == self.length
+      flag = false unless yield(self[index])
+      index += 1
+    end
+    flag
   end
 end
 

@@ -81,6 +81,16 @@ module Enumerable
     end
     mapped_array
   end
+
+  def my_inject
+    index = 0
+    accumulator = nil
+    until index == self.length
+      yield(accumulator, self[index])
+      index += 1
+    end
+    accumulator
+  end
 end
 
 # You will first have to define my_each

@@ -71,6 +71,16 @@ module Enumerable
       self.length
     end
   end
+
+  def my_map
+    index = 0
+    mapped_array = []
+    until index == self.length
+      mapped_array.push yield(self[index])
+      index += 1
+    end
+    mapped_array
+  end
 end
 
 # You will first have to define my_each

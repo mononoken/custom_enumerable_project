@@ -37,6 +37,16 @@ module Enumerable
     end
     flag
   end
+
+  def my_any?
+    index = 0
+    flag = false
+    until index == self.length
+      flag = true if yield(self[index])
+      index += 1
+    end
+    flag
+  end
 end
 
 # You will first have to define my_each

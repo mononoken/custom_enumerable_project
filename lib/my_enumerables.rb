@@ -57,6 +57,20 @@ module Enumerable
     end
     flag
   end
+
+  def my_count
+    index = 0
+    counter = 0
+    if block_given?
+      until index == self.length
+        counter += 1 if yield(self[index])
+        index += 1
+      end
+      counter
+    else
+      self.length
+    end
+  end
 end
 
 # You will first have to define my_each

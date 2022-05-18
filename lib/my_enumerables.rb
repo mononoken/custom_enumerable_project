@@ -47,6 +47,16 @@ module Enumerable
     end
     flag
   end
+
+  def my_none?
+    index = 0
+    flag = true
+    until index == self.length
+      flag = false if yield(self[index])
+      index += 1
+    end
+    flag
+  end
 end
 
 # You will first have to define my_each

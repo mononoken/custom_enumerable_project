@@ -82,11 +82,11 @@ module Enumerable
     mapped_array
   end
 
-  def my_inject
+  def my_inject(initial_value=nil)
     index = 0
-    accumulator = nil
+    accumulator = initial_value.to_i
     until index == self.length
-      yield(accumulator, self[index])
+      accumulator = yield(accumulator, self[index])
       index += 1
     end
     accumulator
